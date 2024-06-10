@@ -1,6 +1,5 @@
-
 buildscript {
-    val kotlin_version by extra("1.8.21") // Specify your Kotlin version here
+    val kotlinVersion by extra("1.8.21") // Specify your Kotlin version here
 
     repositories {
         google()
@@ -8,8 +7,8 @@ buildscript {
     }
 
     dependencies {
-        classpath(gradle)
-        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version")
+        classpath(libs.gradle)
+        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion")
     }
 }
 
@@ -65,13 +64,14 @@ dependencies {
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)
-    implementation(libs.androidx.compose.bom)
+    implementation(platform(libs.androidx.compose.bom))
     implementation("androidx.compose.ui:ui:1.6.7")
     implementation("androidx.compose.ui:ui-tooling-preview:1.6.7")
     implementation("androidx.compose.material3:material3:1.2.1")
     implementation("androidx.compose.material:material-icons-extended:1.6.7")
     implementation("androidx.compose.foundation:foundation:1.6.7")
     implementation("io.coil-kt:coil-compose:2.4.0")
+    implementation("com.chargemap.compose:numberpicker:1.0.3")
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
@@ -80,4 +80,5 @@ dependencies {
     androidTestImplementation("androidx.compose.ui:ui-test-junit4:1.6.7")
     debugImplementation("androidx.compose.ui:ui-tooling:1.5.1")
     debugImplementation("androidx.compose.ui:ui-test-manifest:1.6.7")
+
 }

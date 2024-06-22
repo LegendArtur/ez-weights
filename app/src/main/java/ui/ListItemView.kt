@@ -9,8 +9,6 @@ import androidx.compose.ui.unit.dp
 
 @Composable
 fun ListItemView(item: ListItem) {
-    var number by remember { mutableFloatStateOf(0f) }
-
     Row(
         verticalAlignment = Alignment.CenterVertically,
         modifier = Modifier
